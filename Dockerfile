@@ -1,17 +1,13 @@
-# Utiliza la imagen oficial de Node.js como base
+# Usar una imagen base de NodeJS
 FROM node:14
-
-# Establece el directorio de trabajo en /usr/src/app
+# Crear directorio de trabajo
 WORKDIR /usr/src/app
-
-# Copia los archivos de la aplicación al contenedor
-COPY . .
-
-# Instala las dependencias
+# Instalar las dependencias de la aplicación
+COPY package*.json ./
 RUN npm install
-
-# Expone el puerto 3000
-EXPOSE 3000
-
-# Comando para ejecutar la aplicación
-CMD ["npm", "start"]
+# Copiar los archivos de la aplicación
+COPY . .
+# Exponer el puerto
+EXPOSE 8080
+# Comando para correr la aplicación
+CMD [ "node", "server.js" ]
