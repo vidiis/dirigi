@@ -1,0 +1,15 @@
+{
+  "name": "dirigi",
+  "version": "1.0.0",
+  "description": "Descripción de tu aplicación",
+  "main": "app.js",  // Puede ser diferente según el nombre de tu archivo principal
+  "scripts": {
+    "start": "node app.js"  // Ajusta según el comando para iniciar tu aplicación
+  },
+  "dependencies": {
+    // Agrega las dependencias específicas de tu aplicación aquí
+  },
+  "devDependencies": {
+    // Puedes agregar dependencias específicas de desarrollo aquí si es necesario
+  }
+}
