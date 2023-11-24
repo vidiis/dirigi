@@ -8,6 +8,6 @@ RUN npm install
 # Copiar los archivos de la aplicación
 COPY . .
 # Exponer el puerto
-EXPOSE 8080
+EXPOSE 3000
 # Comando para correr la aplicación
 CMD [ "node", "server.js" ]
