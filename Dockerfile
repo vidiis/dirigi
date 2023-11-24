@@ -1,13 +1,13 @@
-const express = require('express');
-const app = express();
-
-// Define el puerto usando la variable de entorno PORT o 8080 si no está definida
-const PORT = process.env.PORT || 8080;
-
-app.use(express.static('public'));
-
-// El resto de tu configuración del servidor
-
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+# Usar una imagen base de NodeJS
+FROM node:14
+# Crear directorio de trabajo
+WORKDIR /usr/src/app
+# Instalar las dependencias de la aplicación
+COPY package*.json ./
+RUN npm install
+# Copiar los archivos de la aplicación
+COPY . .
+# Exponer el puerto
+EXPOSE 8080
+# Comando para correr la aplicación
+CMD [ "node", "server.js" ]
